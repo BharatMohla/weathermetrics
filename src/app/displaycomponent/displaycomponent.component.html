@@ -1,0 +1,63 @@
+<div>
+  <div class="header">
+    <h4>Metrics Data for Different Locations</h4>
+  </div>
+  <div  class="container">
+    <form class="myform" #myform="ngForm" novalidate>
+      <div class="row">
+        <label>Select metric</label>
+        <div class="fields">
+          <select [(ngModel)]="metric" name="metric" required>
+            <option value="">--Select--</option>
+            <option value="Tmax">Maximum Temperature</option>
+            <option value="Tmin">Minimum Temperature</option>
+            <option value="Rainfall">Rainfall</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <label>Select location</label>
+        <div class="fields">
+          <select [(ngModel)]="location" name="location" required>
+            <option value="">--Select--</option>
+            <option value="UK">UK</option>
+            <option value="England">England</option>
+            <option value="Scotland">Scotland</option>
+            <option value="Wales">Wales</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <label>Start Date</label>
+        <div class="fields">
+          <input type="month" [(ngModel)]="startDate" name="startDate" min="1901-01" max="2017-12" required (change)="onValueChange()">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <label>End Date</label>
+        <div class="fields">
+          <input type="month" [(ngModel)]="endDate" name="endDate" min="startDate" max="2017-12" required (change)="onValueChange()">
+        </div>
+      </div>
+      <br>
+      <div style="color:red" *ngIf="myform.invalid && !myform.pristine">* All fields are required</div>
+      <div style="color:red" *ngIf="myform.valid && disabled">* Error End Date cannot be before Start Date </div>
+      <button [disabled]="myform.invalid" (click)="onSubmit()">Submit</button>
+    </form>
+  </div>
+
+
+
+  <div *ngIf="show">
+    <div class="charts">
+      <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"
+        [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+      </canvas>
+    </div>
+  </div>
+
+</div>

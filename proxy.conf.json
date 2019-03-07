@@ -1,0 +1,8 @@
+{
+    "/api/*":{
+        "target":"https://s3.eu-west-2.amazonaws.com/interview-question-data/metoffice/",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    }
+}

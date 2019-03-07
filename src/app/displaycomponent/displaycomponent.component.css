@@ -1,0 +1,91 @@
+.header{
+    position: relative;
+    top: 15px;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 42px;
+    background-color: #006890;
+    color: White;
+    font-family: cursive;
+}
+
+.container{
+    background-color:aquamarine;
+    margin:20px;
+    padding:10px;
+}
+
+.myform{
+        
+    position: relative;
+    left: 100px;
+    margin: 10px;
+}
+
+.fields{
+    display: inline-block;
+    position: absolute;
+    left: 95px;
+}
+
+select{
+    height:26px
+}
+
+@media only screen and (max-width: 600px) {
+    .charts{
+        position: relative;
+        left:50px;
+        align-content: center;
+        display: block;
+        height:150px;
+        width:400px
+    }
+    .container{
+        max-width:400px;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .charts{
+        position: relative;
+        left:50px;
+        display: block;
+        height:150px;
+        width:550px
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .charts{
+        position: relative;
+        left:50px;
+        align-content: center;
+        display: block;
+        height:200px;
+        width:700px
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .charts{
+        position: relative;
+        left:50px;
+        align-content: center;
+        display: block;
+        height:200px;
+        width:800px
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .charts{
+        position: relative;
+        left:50px;
+        align-content: center;
+        display: block;
+        height:200px;
+        width:800px
+    }
+}
